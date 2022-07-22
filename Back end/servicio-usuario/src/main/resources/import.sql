@@ -1,0 +1,4 @@
+INSERT INTO usuarios (id_usuario, nombre_usuario, telefono_usuario, correo_usuario, clave_usuario) VALUES (1, "Juan Sebastian", 343254325, "juanse@gmail.com", "Clave1234");
+INSERT INTO usuarios (id_usuario, nombre_usuario, telefono_usuario, correo_usuario, clave_usuario) VALUES (2, "Manuela Beltran", 43246234, "manubel@gmail.com", "Clave1234");
+INSERT INTO usuarios (id_usuario, nombre_usuario, telefono_usuario, correo_usuario, clave_usuario) VALUES (3, "Sebastian", 5435345, "sebas@gmail.com", "Clave1234");
+INSERT INTO usuarios (id_usuario, nombre_usuario, telefono_usuario, correo_usuario, clave_usuario) VALUES (4, "Laura Penagos", 543858934, "lolape@hotmail.com", "Clave1234");
