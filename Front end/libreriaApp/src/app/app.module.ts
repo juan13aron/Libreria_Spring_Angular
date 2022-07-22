@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { LayoutModule } from './layout/layout.module';
+import { HttpClientModule} from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { AutoresComponent } from './components/autores/autores.component';
 import { ColeccionesComponent } from './components/colecciones/colecciones.component';
@@ -14,6 +17,9 @@ import { PrestamosComponent } from './components/prestamos/prestamos.component';
 import { RolesComponent } from './components/roles/roles.component';
 import { TipoColeccionesComponent } from './components/tipo-colecciones/tipo-colecciones.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
+
+import { HomeComponent } from './components/home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -28,11 +34,14 @@ import { UsuariosComponent } from './components/usuarios/usuarios.component';
     PrestamosComponent,
     RolesComponent,
     TipoColeccionesComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LayoutModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

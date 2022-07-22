@@ -6,6 +6,7 @@ import { EditorialesComponent } from './components/editoriales/editoriales.compo
 import { EmpleadosComponent } from './components/empleados/empleados.component';
 import { EstadosComponent } from './components/estados/estados.component';
 import { GenerosComponent } from './components/generos/generos.component';
+import { HomeComponent } from './components/home/home.component';
 import { MateriasComponent } from './components/materias/materias.component';
 import { PrestamosComponent } from './components/prestamos/prestamos.component';
 import { RolesComponent } from './components/roles/roles.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: "roles", component: RolesComponent},
   {path: "tipocolecciones", component: TipoColeccionesComponent},
   {path: "usuarios", component: UsuariosComponent},
+  {path: "home", component: HomeComponent}
 ];
 
 @NgModule({
