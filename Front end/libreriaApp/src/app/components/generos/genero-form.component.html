@@ -1,0 +1,21 @@
+<div class="card border-primary mb-3">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body text-primary">
+        <button class="btn btn-secondary my-2" routerLink="/generos">Regresar</button>
+        <br>
+        <form>
+            <div class="form-group">
+                <label for="nombre_genero">Nombre</label>
+                <input type="text" name="nombre_genero" id="nombre_genero" class="form-control" [(ngModel)]="genero.nombre_genero">
+            </div>
+            <div class="form-group">
+                <label for="descripcion_genero">Descripcion</label>
+                <input type="text" name="descripcion_genero" id="descripcion_genero" class="form-control" [(ngModel)]="genero.descripcion_genero">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" (click)="genero.id_genero? modificar(): crear()">
+                    {{ genero.id_genero? 'Modificar': 'Crear' }}</button>
+            </div>
+        </form>
+    </div>
+</div>

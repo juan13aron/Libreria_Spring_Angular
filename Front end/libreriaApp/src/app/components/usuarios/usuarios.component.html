@@ -1,6 +1,7 @@
 <div class="card bortder-primary mb-3">
     <div class="card-header">{{titulo}}</div>
     <div class="card-body text-primary">
+       <button class="btn btn-primary my-2" routerLink="/usuarios/form">Crear Usuario</button>
         <table class="table table-hover table-striped">
             <thead>
                 <tr>
@@ -9,6 +10,7 @@
                     <th>Telefono</th>
                     <th>Correo</th>
                     <th>Clave</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -18,6 +20,13 @@
                     <td>{{usuario.telefono_usuario}}</td>
                     <td>{{usuario.correo_usuario}}</td>
                     <td>{{usuario.clave_usuario}}</td>
+                    <td>
+                        <button class="btn btn-secondary btn-sm" [routerLink]="['/usuarios/form',usuario.id_usuario]">
+                            Editar
+                        </button>
+                        <button class="btn btn-danger btn-sm" (click)="eliminar(usuario)">Eliminar
+                        </button>
+                    </td>
                 </tr>
             </tbody>
         </table>

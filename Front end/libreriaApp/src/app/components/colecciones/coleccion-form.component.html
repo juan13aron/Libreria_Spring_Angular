@@ -1,0 +1,33 @@
+<div class="card border-primary mb-3">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body text-primary">
+        <button class="btn btn-secondary my-2" routerLink="/colecciones">Regresar</button>
+        <br>
+        <form>
+            <div class="form-group">
+                <label for="nombre_coleccion">Nombre</label>
+                <input type="text" name="nombre_coleccion" id="nombre_coleccion" class="form-control" [(ngModel)]="coleccion.nombre_coleccion">
+            </div>
+            <div class="form-group">
+                <label for="fecha_creacion">Fecha de Publicacion</label>
+                <input type="date" name="fecha_creacion" id="fecha_creacion" class="form-control" [(ngModel)]="coleccion.fecha_creacion">
+            </div>
+            <div class="form-group">
+                <label for="pagina_coleccion">Numero de Paginas</label>
+                <input type="number" name="pagina_coleccion" id="pagina_coleccion" class="form-control" [(ngModel)]="coleccion.pagina_coleccion">
+            </div>
+            <div class="form-group">
+                <label for="resumen_coleccion">Resumen</label>
+                <input type="text" name="resumen_coleccion" id="resumen_coleccion" class="form-control" [(ngModel)]="coleccion.resumen_coleccion">
+            </div>
+            <div class="form-group">
+                <label for="imagen">Portada</label>
+                <input type="file" name="imagen" id="imagen" class="form-control" [(ngModel)]="coleccion.imagen">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" (click)="coleccion.id_coleccion? modificar(): crear()">
+                    {{ coleccion.id_coleccion? 'Modificar': 'Crear' }}</button>
+            </div>
+        </form>
+    </div>
+</div>

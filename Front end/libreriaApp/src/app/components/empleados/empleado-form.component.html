@@ -1,0 +1,29 @@
+<div class="card border-primary mb-3">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body text-primary">
+        <button class="btn btn-secondary my-2" routerLink="/empleados">Regresar</button>
+        <br>
+        <form>
+            <div class="form-group">
+                <label for="nombre_empleado">Nombre</label>
+                <input type="text" name="nombre_empleado" id="nombre_empleado" class="form-control" [(ngModel)]="empleado.nombre_empleado">
+            </div>
+            <div class="form-group">
+                <label for="telefono_empleado">Telefono</label>
+                <input type="number" name="telefono_empleado" id="telefono_empleado" class="form-control" [(ngModel)]="empleado.telefono_empleado">
+            </div>
+            <div class="form-group">
+                <label for="correo_empleado">Correo</label>
+                <input type="email" name="correo_empleado" id="correo_empleado" class="form-control" [(ngModel)]="empleado.correo_empleado">
+            </div>
+            <div class="form-group">
+                <label for="clave_empleado">Contraseña</label>
+                <input type="text" name="clave_empleado" id="clave_empleado" class="form-control" [(ngModel)]="empleado.clave_empleado">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" (click)="empleado.id_empleado? modificar(): crear()">
+                    {{ empleado.id_empleado? 'Modificar': 'Crear' }}</button>
+            </div>
+        </form>
+    </div>
+</div>

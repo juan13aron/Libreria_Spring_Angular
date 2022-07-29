@@ -8,12 +8,14 @@ import org.springframework.core.io.Resource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -23,7 +25,7 @@ import co.edu.ucentral.servicio.colecciones.service.ColeccionService;
 
 
 
-
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.PUT, RequestMethod.POST,RequestMethod.DELETE})
 @RestController
 public class ColeccionController {
 	
@@ -50,9 +52,9 @@ public class ColeccionController {
 			return ResponseEntity.notFound().build();
 		}
 		Coleccion coleccionBd = optional.get();
-		coleccionBd.setNombre(coleccion.getNombre());
-		coleccionBd.setPaginas(coleccion.getPaginas());
-		coleccionBd.setResumen(coleccion.getResumen());
+		coleccionBd.setNombre_coleccion(coleccion.getNombre_coleccion());
+		coleccionBd.setPagina_coleccion(coleccion.getPagina_coleccion());
+		coleccionBd.setResumen_coleccion(coleccion.getResumen_coleccion());
 		if(!archivo.isEmpty()) {
 			coleccionBd.setImagen(archivo.getBytes());
 		}
@@ -67,7 +69,6 @@ public class ColeccionController {
 		Resource img = new ByteArrayResource(optional.get().getImagen());
 		return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(img);
 	}
-
 
 	@GetMapping
 	public ResponseEntity<?> listar(){
@@ -93,9 +94,9 @@ public class ColeccionController {
 			return ResponseEntity.notFound().build();
 		}
 		Coleccion coleccionBd = optional.get();
-		coleccionBd.setNombre(coleccion.getNombre());
-		coleccionBd.setPaginas(coleccion.getPaginas());
-		coleccionBd.setResumen(coleccion.getResumen());
+		coleccionBd.setNombre_coleccion(coleccion.getNombre_coleccion());
+		coleccionBd.setPagina_coleccion(coleccion.getPagina_coleccion());
+		coleccionBd.setResumen_coleccion(coleccion.getResumen_coleccion());
 
 		return ResponseEntity.status(HttpStatus.CREATED).body(service.save(coleccionBd));
 	}

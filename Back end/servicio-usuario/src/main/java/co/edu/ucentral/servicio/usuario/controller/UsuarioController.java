@@ -11,12 +11,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import co.edu.ucentral.servicio.usuario.model.Usuario;
@@ -25,18 +27,19 @@ import co.edu.ucentral.servicio.usuario.service.UsuarioService;
 
 
 
-
+@CrossOrigin
 @RestController
 public class UsuarioController {
 
 	@Autowired
 	private UsuarioService service;
-
+	
+	
 	@GetMapping
 	public ResponseEntity<?> listar(){
 		return ResponseEntity.ok().body(service.findAll());
 	}
-
+	
 	@GetMapping("/{id}")
 	public ResponseEntity<?> buscarPorId(@PathVariable Long id){
 		Optional<Usuario> optional = service.findById(id);
@@ -45,7 +48,7 @@ public class UsuarioController {
 		}
 		return ResponseEntity.ok(optional.get());
 	}
-
+	
 	@PostMapping
 	public ResponseEntity<?> crear(@Valid @RequestBody Usuario usuario, BindingResult result){
 		if(result.hasErrors()) {
@@ -54,7 +57,7 @@ public class UsuarioController {
 		Usuario usuarioBd = service.save(usuario);
 		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioBd);
 	}
-
+	
 	@PutMapping("/{id}")
 	public ResponseEntity<?> editar(@Valid @RequestBody Usuario usuario, BindingResult result, @PathVariable Long
 			id){
@@ -74,7 +77,7 @@ public class UsuarioController {
 
 		return ResponseEntity.status(HttpStatus.CREATED).body(service.save(usuarioBd));
 	}
-
+	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> eliminar(@PathVariable Long id){
 		service.deleteById(id);

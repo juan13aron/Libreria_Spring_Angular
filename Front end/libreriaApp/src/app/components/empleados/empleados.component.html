@@ -1,1 +1,34 @@
-<p>empleados works!</p>
+<div class="card bortder-primary mb-3">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body text-primary">
+        <button class="btn btn-primary my-2" routerLink="/empleados/form">Crear Empleado</button>
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                    <th>Correo</th>
+                    <th>Clave</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let empleado of lista">
+                    <td>{{empleado.id_empleado}}</td>
+                    <td>{{empleado.nombre_empleado}}</td>
+                    <td>{{empleado.telefono_empleado}}</td>
+                    <td>{{empleado.correo_empleado}}</td>
+                    <td>{{empleado.clave_empleado}}</td>
+                    <td>
+                        <button class="btn btn-secondary btn-sm" [routerLink]="['/empleados/form',empleado.id_empleado]">
+                            Editar
+                        </button>
+                        <button class="btn btn-danger btn-sm" (click)="eliminar(empleado)">Eliminar
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

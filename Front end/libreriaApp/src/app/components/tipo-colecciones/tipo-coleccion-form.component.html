@@ -1,0 +1,17 @@
+<div class="card border-primary mb-3">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body text-primary">
+        <button class="btn btn-secondary my-2" routerLink="/tipocolecciones">Regresar</button>
+        <br>
+        <form>
+            <div class="form-group">
+                <label for="nombre_tipo_coleccion">Nombre</label>
+                <input type="text" name="nombre_tipo_coleccion" id="nombre_tipo_coleccion" class="form-control" [(ngModel)]="tipocoleccion.nombre_tipo_coleccion">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" (click)="tipocoleccion.id_tipo_coleccion? modificar(): crear()">
+                    {{ tipocoleccion.id_tipo_coleccion? 'Modificar': 'Crear' }}</button>
+            </div>
+        </form>
+    </div>
+</div>

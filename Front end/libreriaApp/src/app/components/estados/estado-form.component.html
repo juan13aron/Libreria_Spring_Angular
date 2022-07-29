@@ -1,0 +1,21 @@
+<div class="card border-primary mb-3">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body text-primary">
+        <button class="btn btn-secondary my-2" routerLink="/estados">Regresar</button>
+        <br>
+        <form>
+            <div class="form-group">
+                <label for="nombre_estado">Nombre</label>
+                <input type="text" name="nombre_estado" id="nombre_estado" class="form-control" [(ngModel)]="estado.nombre_estado">
+            </div>
+            <div class="form-group">
+                <label for="descripcion_estado">Descripcion</label>
+                <input type="text" name="descripcion_estado" id="descripcion_estado" class="form-control" [(ngModel)]="estado.descripcion_estado">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" (click)="estado.id_estado? modificar(): crear()">
+                    {{ estado.id_estado? 'Modificar': 'Crear' }}</button>
+            </div>
+        </form>
+    </div>
+</div>

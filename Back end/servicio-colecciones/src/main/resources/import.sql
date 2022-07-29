@@ -1,6 +1,6 @@
-INSERT INTO colecciones (id, nombre, paginas, fecha_creacion, resumen) VALUES (1, 'Books', 100, NOW(), 'Es muy bueno el libro');
-INSERT INTO colecciones (id, nombre, paginas, fecha_creacion, resumen) VALUES (2, 'Caperucita Roja', 200, '2000-01-01', 'El lobo se la come');
-INSERT INTO colecciones (id, nombre, paginas, fecha_creacion, resumen) VALUES (3, 'Don Quijote', 200, '2005-01-01', 'Viven en un molino');
-INSERT INTO colecciones (id, nombre, paginas, fecha_creacion, resumen) VALUES (4, 'Colores', 500, '2020-01-01', 'Es de colores');
-INSERT INTO colecciones (id, nombre, paginas, fecha_creacion, resumen) VALUES (5, 'Frankestein', 400,  '1998-01-01', 'Reviven a un muerto');
-INSERT INTO colecciones (id, nombre, paginas, fecha_creacion, resumen) VALUES (6, 'Hunger Games', 100, '2013-01-01', 'Todos se matan');
+INSERT INTO colecciones (id_coleccion, nombre_coleccion, pagina_coleccion, fecha_creacion, resumen_coleccion,Editorial_id_editorial,Materias_id_materia,Autores_id_autor,Genero_id_genero,  Estado_id_estado) VALUES (1, 'Books', 100, NOW(), 'Es muy bueno el libro',1,1,1,1,1);
+INSERT INTO colecciones (id_coleccion, nombre_coleccion, pagina_coleccion, fecha_creacion, resumen_coleccion,Editorial_id_editorial,Materias_id_materia,Autores_id_autor,Genero_id_genero,  Estado_id_estado) VALUES (2, 'Caperucita Roja', 200, '2000-01-01', 'El lobo se la come',1,1,1,2,1);
+INSERT INTO colecciones (id_coleccion, nombre_coleccion, pagina_coleccion, fecha_creacion, resumen_coleccion,Editorial_id_editorial,Materias_id_materia,Autores_id_autor,Genero_id_genero,  Estado_id_estado) VALUES (3, 'Don Quijote', 200, '2005-01-01', 'Viven en un molino',1,2,1,2,1);
+INSERT INTO colecciones (id_coleccion, nombre_coleccion, pagina_coleccion, fecha_creacion, resumen_coleccion,Editorial_id_editorial,Materias_id_materia,Autores_id_autor,Genero_id_genero,  Estado_id_estado) VALUES (4, 'Colores', 500, '2020-01-01', 'Es de colores',1,2,1,2,1);
+INSERT INTO colecciones (id_coleccion, nombre_coleccion, pagina_coleccion, fecha_creacion, resumen_coleccion,Editorial_id_editorial,Materias_id_materia,Autores_id_autor,Genero_id_genero,  Estado_id_estado) VALUES (5, 'Frankestein', 400,  '1998-01-01', 'Reviven a un muerto',2,1,2,1,2);
+INSERT INTO colecciones (id_coleccion, nombre_coleccion, pagina_coleccion, fecha_creacion, resumen_coleccion,Editorial_id_editorial,Materias_id_materia,Autores_id_autor,Genero_id_genero,  Estado_id_estado) VALUES (6, 'Hunger Games', 100, '2013-01-01', 'Todos se matan',1,2,2,2,1);

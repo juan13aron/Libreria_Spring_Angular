@@ -1,1 +1,32 @@
-<p>prestamos works!</p>
+<div class="card bortder-primary mb-3">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body text-primary">
+        <button class="btn btn-primary my-2" routerLink="/prestamos/form">Crear Prestamo</button>
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Fecha Prestamo</th>
+                    <th>Descripcion</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let prestamo of lista">
+                    <td>{{prestamo.id_prestamo}}</td>
+                    <td>{{prestamo.nombre_prestamo}}</td>
+                    <td>{{prestamo.fechaPrestamo}}</td>
+                    <td>{{prestamo.descripcion}}</td>
+                    <td>
+                        <button class="btn btn-secondary btn-sm" [routerLink]="['/prestamos/form',prestamo.id_prestamo]">
+                            Editar
+                        </button>
+                        <button class="btn btn-danger btn-sm" (click)="eliminar(prestamo)">Eliminar
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

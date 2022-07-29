@@ -1,0 +1,21 @@
+<div class="card border-primary mb-3">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body text-primary">
+        <button class="btn btn-secondary my-2" routerLink="/materias">Regresar</button>
+        <br>
+        <form>
+            <div class="form-group">
+                <label for="nombre_materia">Nombre</label>
+                <input type="text" name="nombre_materia" id="nombre_materia" class="form-control" [(ngModel)]="materia.nombre_materia">
+            </div>
+            <div class="form-group">
+                <label for="descripcion_materia">Descripcion</label>
+                <input type="text" name="descripcion_materia" id="descripcion_materia" class="form-control" [(ngModel)]="materia.descripcion_materia">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" (click)="materia.id_materia? modificar(): crear()">
+                    {{ materia.id_materia? 'Modificar': 'Crear' }}</button>
+            </div>
+        </form>
+    </div>
+</div>
